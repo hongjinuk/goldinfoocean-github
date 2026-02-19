@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>금빛 정보 바다 - Gold Info Ocean</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <header class="app-header">
+            <div class="header-content">
+                <div>
+                    <h1 data-i18n="header.title">🌟 금빛 정보 바다 🌟</h1>
+                    <p data-i18n="header.subtitle">Gold Info Ocean - 성격 분석 플랫폼</p>
+                </div>
+                <div class="language-switcher">
+                    <button id="langBtn" class="lang-button" onclick="toggleLanguage()">
+                        <span id="langIcon">🌐</span> <span id="langText">English</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <nav class="tab-navigation">
+            <button class="tab-button active" onclick="showTab(event, 'bloodtype')" data-i18n="tabs.bloodtype">🩸 혈액형</button>
+            <button class="tab-button" onclick="showTab(event, 'mbti')" data-i18n="tabs.mbti">🧠 MBTI</button>
+            <button class="tab-button" onclick="showTab(event, 'hormone')" data-i18n="tabs.hormone">💊 호르몬 성향</button>
+            <button class="tab-button" onclick="showTab(event, 'faceshape')" data-i18n="tabs.faceshape">😊 관상학</button>
+            <button class="tab-button" onclick="showTab(event, 'palmreading')" data-i18n="tabs.palmreading">✋ 손금</button>
+            <button class="tab-button" onclick="showTab(event, 'constitution')" data-i18n="tabs.constitution">🏥 체질</button>
+            <button class="tab-button" onclick="showTab(event, 'numerology')" data-i18n="tabs.numerology">🔢 수비학</button>
+            <button class="tab-button" onclick="showTab(event, 'zodiac')" data-i18n="tabs.zodiac">⭐ 별자리</button>
+            <button class="tab-button" onclick="showTab(event, 'chinesezodiac')" data-i18n="tabs.chinesezodiac">🐉 띠</button>
+            <button class="tab-button" onclick="showTab(event, 'enneagram')" data-i18n="tabs.enneagram">🎭 에니어그램</button>
+            <button class="tab-button" onclick="showTab(event, 'profile')" data-i18n="tabs.profile">👤 내 프로필</button>
+            <button class="tab-button" onclick="showTab(event, 'contacts')" data-i18n="tabs.contacts">📋 지인 관리</button>
+        </nav>
+
+        <main class="app-content">
+            <!-- Blood Type Section -->
+            <div id="bloodtype" class="personality-section active">
+                <h2 data-i18n="bloodtype.title">🩸 혈액형 (Blood Type)</h2>
+                <p class="section-description" data-i18n="bloodtype.description">혈액형별 성격 특성과 궁합 정보입니다.</p>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showBloodType('A')">💉 A형</button>
+                    <button class="type-button" onclick="showBloodType('B')">💉 B형</button>
+                    <button class="type-button" onclick="showBloodType('AB')">💉 AB형</button>
+                    <button class="type-button" onclick="showBloodType('O')">💉 O형</button>
+                </div>
+                <div id="bloodtype-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- MBTI Section -->
+            <div id="mbti" class="personality-section">
+                <h2 data-i18n="mbti.title">🧠 MBTI</h2>
+                <p class="section-description" data-i18n="mbti.description">16가지 성격 유형 분석입니다. 자신의 유형을 확인해보세요!</p>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showMBTI('INTJ')">🎯 INTJ</button>
+                    <button class="type-button" onclick="showMBTI('ENFP')">🎯 ENFP</button>
+                    <button class="type-button" onclick="showMBTI('ISTJ')">🎯 ISTJ</button>
+                    <button class="type-button" onclick="showMBTI('ESFP')">🎯 ESFP</button>
+                </div>
+                <div id="mbti-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- Hormone Section -->
+            <div id="hormone" class="personality-section">
+                <h2 data-i18n="hormone.title">💊 호르몬 성향</h2>
+                <p class="section-description" data-i18n="hormone.description">호르몬 성향에 따른 성격 특성과 건강 관리 방법입니다.</p>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showHormone('ESTROGEN')">💐 에스트로겐형</button>
+                    <button class="type-button" onclick="showHormone('TESTOSTERONE')">⚡ 테스토스테론형</button>
+                    <button class="type-button" onclick="showHormone('BALANCED')">⚖️ 균형형</button>
+                </div>
+                <div id="hormone-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- Face Shape Section -->
+            <div id="faceshape" class="personality-section">
+                <h2 data-i18n="faceshape.title">😊 관상학 (얼굴형)</h2>
+                <p class="section-description" data-i18n="faceshape.description">얼굴형에 따른 성격 특성과 운세 분석입니다.</p>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showFaceShape('ROUND')">🌕 둥근형</button>
+                    <button class="type-button" onclick="showFaceShape('SQUARE')">🔷 사각형</button>
+                    <button class="type-button" onclick="showFaceShape('OVAL')">🥚 계란형</button>
+                    <button class="type-button" onclick="showFaceShape('HEART')">💝 하트형</button>
+                </div>
+                <div id="faceshape-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- Palm Reading Section -->
+            <div id="palmreading" class="personality-section">
+                <h2 data-i18n="palmreading.title">✋ 손금</h2>
+                <p class="section-description" data-i18n="palmreading.description">손금으로 보는 성격, 건강, 운세 분석입니다.</p>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showPalmReading('HEART_LINE')">💕 감정선</button>
+                    <button class="type-button" onclick="showPalmReading('HEAD_LINE')">🧠 두뇌선</button>
+                    <button class="type-button" onclick="showPalmReading('LIFE_LINE')">🌱 생명선</button>
+                    <button class="type-button" onclick="showPalmReading('FATE_LINE')">🌟 운명선</button>
+                </div>
+                <div id="palmreading-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- Constitution Section -->
+            <div id="constitution" class="personality-section">
+                <h2 data-i18n="constitution.title">🏥 사상체질 (Four Constitution Medicine)</h2>
+                <p class="section-description" data-i18n="constitution.description">한의학의 사상체질론에 따른 체질 분석입니다. 각 체질마다 성격, 건강, 음식 등이 다릅니다.</p>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showConstitution('TAEYANGIN')">☀️ 태양인</button>
+                    <button class="type-button" onclick="showConstitution('TAEUMIN')">🌙 태음인</button>
+                    <button class="type-button" onclick="showConstitution('SOYANGIN')">🔥 소양인</button>
+                    <button class="type-button" onclick="showConstitution('SOEUMIN')">❄️ 소음인</button>
+                </div>
+                <div id="constitution-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- Numerology Section -->
+            <div id="numerology" class="personality-section">
+                <h2 data-i18n="numerology.title">🔢 수비학 (Numerology)</h2>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showNumerology('1')">1번</button>
+                    <button class="type-button" onclick="showNumerology('2')">2번</button>
+                    <button class="type-button" onclick="showNumerology('3')">3번</button>
+                    <button class="type-button" onclick="showNumerology('4')">4번</button>
+                    <button class="type-button" onclick="showNumerology('5')">5번</button>
+                    <button class="type-button" onclick="showNumerology('6')">6번</button>
+                    <button class="type-button" onclick="showNumerology('7')">7번</button>
+                    <button class="type-button" onclick="showNumerology('8')">8번</button>
+                    <button class="type-button" onclick="showNumerology('9')">9번</button>
+                </div>
+                <div id="numerology-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- Zodiac Section -->
+            <div id="zodiac" class="personality-section">
+                <h2 data-i18n="zodiac.title">별자리 (Zodiac)</h2>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showZodiac('ARIES')">양자리</button>
+                    <button class="type-button" onclick="showZodiac('TAURUS')">황소자리</button>
+                    <button class="type-button" onclick="showZodiac('GEMINI')">쌍둥이자리</button>
+                    <button class="type-button" onclick="showZodiac('CANCER')">게자리</button>
+                    <button class="type-button" onclick="showZodiac('LEO')">사자자리</button>
+                    <button class="type-button" onclick="showZodiac('VIRGO')">처녀자리</button>
+                    <button class="type-button" onclick="showZodiac('LIBRA')">천칭자리</button>
+                    <button class="type-button" onclick="showZodiac('SCORPIO')">전갈자리</button>
+                    <button class="type-button" onclick="showZodiac('SAGITTARIUS')">궁수자리</button>
+                    <button class="type-button" onclick="showZodiac('CAPRICORN')">염소자리</button>
+                    <button class="type-button" onclick="showZodiac('AQUARIUS')">물병자리</button>
+                    <button class="type-button" onclick="showZodiac('PISCES')">물고기자리</button>
+                </div>
+                <div id="zodiac-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- Chinese Zodiac Section -->
+            <div id="chinesezodiac" class="personality-section">
+                <h2 data-i18n="chinesezodiac.title">띠 (Chinese Zodiac)</h2>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showChineseZodiac('RAT')">쥐띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('OX')">소띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('TIGER')">호랑이띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('RABBIT')">토끼띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('DRAGON')">용띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('SNAKE')">뱀띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('HORSE')">말띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('GOAT')">양띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('MONKEY')">원숭이띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('ROOSTER')">닭띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('DOG')">개띠</button>
+                    <button class="type-button" onclick="showChineseZodiac('PIG')">돼지띠</button>
+                </div>
+                <div id="chinesezodiac-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- Enneagram Section -->
+            <div id="enneagram" class="personality-section">
+                <h2 data-i18n="enneagram.title">에니어그램 (Enneagram)</h2>
+                <div class="type-selector">
+                    <button class="type-button" onclick="showEnneagram('1')">1번 개혁가</button>
+                    <button class="type-button" onclick="showEnneagram('2')">2번 조력가</button>
+                    <button class="type-button" onclick="showEnneagram('3')">3번 성취자</button>
+                    <button class="type-button" onclick="showEnneagram('4')">4번 개인주의자</button>
+                    <button class="type-button" onclick="showEnneagram('5')">5번 탐구자</button>
+                    <button class="type-button" onclick="showEnneagram('6')">6번 충성가</button>
+                    <button class="type-button" onclick="showEnneagram('7')">7번 낙천가</button>
+                    <button class="type-button" onclick="showEnneagram('8')">8번 도전자</button>
+                    <button class="type-button" onclick="showEnneagram('9')">9번 평화주의자</button>
+                </div>
+                <div id="enneagram-info" class="info-card" style="display:none;"></div>
+            </div>
+
+            <!-- Profile Management Section -->
+            <div id="profile" class="personality-section">
+                <h2 data-i18n="profile.title">내 프로필 관리</h2>
+                <div class="form-container">
+                    <h3 data-i18n="profile.inputTitle">내 정보 입력</h3>
+                    <input type="text" id="profile-name" placeholder="이름" class="form-input">
+                    <input type="text" id="profile-interests" placeholder="관심사 (쉼표로 구분)" class="form-input">
+                    <input type="text" id="profile-bloodtype" placeholder="혈액형" class="form-input">
+                    <input type="text" id="profile-mbti" placeholder="MBTI" class="form-input">
+                    <button class="type-button" onclick="saveProfile()" data-i18n="profile.save">저장</button>
+                    <div id="profile-display" class="info-card" style="display:none; margin-top: 20px;"></div>
+                </div>
+            </div>
+
+            <!-- Contacts Management Section -->
+            <div id="contacts" class="personality-section">
+                <h2 data-i18n="contacts.title">지인 관리</h2>
+                <div class="form-container">
+                    <h3 data-i18n="contacts.addTitle">지인 추가</h3>
+                    <input type="text" id="contact-name" placeholder="이름" class="form-input">
+                    <input type="text" id="contact-relationship" placeholder="관계 (예: 친구, 가족)" class="form-input">
+                    <input type="text" id="contact-phone" placeholder="전화번호" class="form-input">
+                    <input type="text" id="contact-bloodtype" placeholder="혈액형" class="form-input">
+                    <input type="text" id="contact-notes" placeholder="메모" class="form-input">
+                    <button class="type-button" onclick="addContact()" data-i18n="contacts.add">추가</button>
+                    <div id="contacts-list" class="contacts-container"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p data-i18n="footer.copyright">© 2026 Gold Info Ocean. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
