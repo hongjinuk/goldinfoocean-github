@@ -23,8 +23,8 @@
         </header>
 
         <nav class="tab-navigation">
-            <button class="tab-button active" onclick="showTab(event, 'bloodtype')" data-i18n="tabs.bloodtype">🩸 혈액형</button>
-            <button class="tab-button" onclick="showTab(event, 'mbti')" data-i18n="tabs.mbti">🧠 MBTI</button>
+            <button class="tab-button" onclick="showTab(event, 'bloodtype')" data-i18n="tabs.bloodtype">🩸 혈액형</button>
+            <button class="tab-button active" onclick="showTab(event, 'mbti')" data-i18n="tabs.mbti">🧠 MBTI</button>
             <button class="tab-button" onclick="showTab(event, 'hormone')" data-i18n="tabs.hormone">💊 호르몬 성향</button>
             <button class="tab-button" onclick="showTab(event, 'faceshape')" data-i18n="tabs.faceshape">😊 관상학</button>
             <button class="tab-button" onclick="showTab(event, 'palmreading')" data-i18n="tabs.palmreading">✋ 손금</button>
@@ -39,7 +39,7 @@
 
         <main class="app-content">
             <!-- Blood Type Section -->
-            <div id="bloodtype" class="personality-section active">
+            <div id="bloodtype" class="personality-section">
                 <h2 data-i18n="bloodtype.title">🩸 혈액형 (Blood Type)</h2>
                 <p class="section-description" data-i18n="bloodtype.description">혈액형별 성격 특성과 궁합 정보입니다.</p>
                 <div class="type-selector">
@@ -52,14 +52,35 @@
             </div>
 
             <!-- MBTI Section -->
-            <div id="mbti" class="personality-section">
+            <div id="mbti" class="personality-section active">
                 <h2 data-i18n="mbti.title">🧠 MBTI</h2>
                 <p class="section-description" data-i18n="mbti.description">16가지 성격 유형 분석입니다. 자신의 유형을 확인해보세요!</p>
                 <div class="type-selector">
                     <button class="type-button" onclick="showMBTI('INTJ')">🎯 INTJ</button>
+                    <button class="type-button" onclick="showMBTI('INTP')">🎯 INTP</button>
+                    <button class="type-button" onclick="showMBTI('ENTJ')">🎯 ENTJ</button>
+                    <button class="type-button" onclick="showMBTI('ENTP')">🎯 ENTP</button>
+                    <button class="type-button" onclick="showMBTI('INFJ')">🎯 INFJ</button>
+                    <button class="type-button" onclick="showMBTI('INFP')">🎯 INFP</button>
+                    <button class="type-button" onclick="showMBTI('ENFJ')">🎯 ENFJ</button>
                     <button class="type-button" onclick="showMBTI('ENFP')">🎯 ENFP</button>
                     <button class="type-button" onclick="showMBTI('ISTJ')">🎯 ISTJ</button>
+                    <button class="type-button" onclick="showMBTI('ISFJ')">🎯 ISFJ</button>
+                    <button class="type-button" onclick="showMBTI('ESTJ')">🎯 ESTJ</button>
+                    <button class="type-button" onclick="showMBTI('ESFJ')">🎯 ESFJ</button>
+                    <button class="type-button" onclick="showMBTI('ISTP')">🎯 ISTP</button>
+                    <button class="type-button" onclick="showMBTI('ISFP')">🎯 ISFP</button>
+                    <button class="type-button" onclick="showMBTI('ESTP')">🎯 ESTP</button>
                     <button class="type-button" onclick="showMBTI('ESFP')">🎯 ESFP</button>
+                </div>
+                <div class="mbti-dimension-selector">
+                    <p class="dimension-label">📊 성향 비교표</p>
+                    <div class="type-selector">
+                        <button class="type-button dimension-button" onclick="showMBTIDimension('EI')">E vs I</button>
+                        <button class="type-button dimension-button" onclick="showMBTIDimension('SN')">S vs N</button>
+                        <button class="type-button dimension-button" onclick="showMBTIDimension('TF')">T vs F</button>
+                        <button class="type-button dimension-button" onclick="showMBTIDimension('JP')">J vs P</button>
+                    </div>
                 </div>
                 <div id="mbti-info" class="info-card" style="display:none;"></div>
             </div>
@@ -225,6 +246,16 @@
     </div>
 
     <script src="js/translations.js"></script>
+    <script src="js/data-bloodtype.js"></script>
+    <script src="js/data-mbti.js"></script>
+    <script src="js/data-hormone.js"></script>
+    <script src="js/data-faceshape.js"></script>
+    <script src="js/data-palmreading.js"></script>
+    <script src="js/data-numerology.js"></script>
+    <script src="js/data-zodiac.js"></script>
+    <script src="js/data-chinesezodiac.js"></script>
+    <script src="js/data-enneagram.js"></script>
+    <script src="js/data-constitution.js"></script>
     <script src="js/data.js"></script>
     <script src="js/app.js"></script>
 </body>

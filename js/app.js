@@ -47,12 +47,49 @@ function showMBTI(type) {
     
     if (info) {
         infoCard.innerHTML = `
-            <h3>${info.type}</h3>
-            <div class="info-item"><strong>설명:</strong> ${info.description}</div>
-            <div class="info-item"><strong>장점:</strong> ${info.strengths}</div>
-            <div class="info-item"><strong>단점:</strong> ${info.weaknesses}</div>
-            <div class="info-item"><strong>직업:</strong> ${info.careerPaths}</div>
-            <div class="info-item"><strong>인간관계:</strong> ${info.relationships}</div>
+            <h3>${info.type} <span class="type-nickname">(${info.nickname})</span></h3>
+            <table class="mbti-table">
+                <thead><tr><th>항목</th><th>내용</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>설명</strong></td><td>${info.description}</td></tr>
+                    <tr><td><strong>장점</strong></td><td>${info.strengths}</td></tr>
+                    <tr><td><strong>단점</strong></td><td>${info.weaknesses}</td></tr>
+                    <tr><td><strong>직업</strong></td><td>${info.careerPaths}</td></tr>
+                    <tr><td><strong>인간관계</strong></td><td>${info.relationships}</td></tr>
+                    ${info.cognitiveFunction ? `<tr><td><strong>인지 기능</strong></td><td>${info.cognitiveFunction}</td></tr>` : ''}
+                    ${info.famousPeople ? `<tr><td><strong>유명인</strong></td><td>${info.famousPeople}</td></tr>` : ''}
+                </tbody>
+            </table>
+        `;
+        infoCard.style.display = 'block';
+    }
+}
+
+function showMBTIDimension(dim) {
+    const info = mbtiDimensions[dim];
+    const infoCard = document.getElementById('mbti-info');
+
+    if (info) {
+        const [leftLabel, rightLabel] = info.dimension.split(' / ');
+        const rows = info.rows.map(row => `
+            <tr>
+                <td class="dim-aspect">${row.aspect}</td>
+                <td class="dim-e">${row.e}</td>
+                <td class="dim-i">${row.i}</td>
+            </tr>
+        `).join('');
+        infoCard.innerHTML = `
+            <h3>📊 ${info.title}</h3>
+            <table class="mbti-table mbti-dimension-table">
+                <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th class="dim-e-header">${leftLabel} 성향</th>
+                        <th class="dim-i-header">${rightLabel} 성향</th>
+                    </tr>
+                </thead>
+                <tbody>${rows}</tbody>
+            </table>
         `;
         infoCard.style.display = 'block';
     }

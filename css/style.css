@@ -205,6 +205,12 @@ body {
     font-size: 1.5rem;
 }
 
+.type-nickname {
+    font-weight: normal;
+    font-size: 0.85em;
+    color: #666;
+}
+
 .info-item {
     margin-bottom: 1rem;
     line-height: 1.6;
@@ -283,4 +289,91 @@ body {
     margin: 1rem 0 1.5rem;
     font-size: 1rem;
     font-style: italic;
+}
+
+.mbti-dimension-selector {
+    margin-top: 1rem;
+    border-top: 1px dashed #e0e0e0;
+    padding-top: 1rem;
+}
+
+.dimension-label {
+    text-align: center;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.dimension-button {
+    border-color: #764ba2;
+    color: #764ba2;
+}
+
+.dimension-button:hover {
+    background: #f3e8ff;
+}
+
+.mbti-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.mbti-table th,
+.mbti-table td {
+    border: 1px solid #dee2e6;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.mbti-table thead tr {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.mbti-table tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.mbti-table tbody tr:hover {
+    background: #e8f4f8;
+}
+
+.mbti-dimension-table .dim-e-header {
+    background: #2980b9;
+}
+
+.mbti-dimension-table .dim-i-header {
+    background: #8e44ad;
+}
+
+.mbti-dimension-table .dim-aspect {
+    font-weight: 600;
+    color: #2c3e50;
+    width: 20%;
+    white-space: nowrap;
+}
+
+.mbti-dimension-table .dim-e {
+    color: #1a5276;
+}
+
+.mbti-dimension-table .dim-i {
+    color: #6c3483;
+}
+
+@media (max-width: 768px) {
+    .mbti-table th,
+    .mbti-table td {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .mbti-dimension-table .dim-aspect {
+        width: 25%;
+    }
 }
